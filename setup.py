@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="wisdom",
-    version="1.1.0",
+    version="1.2.0",
     description="A collection of wise quotes for the terminal",
     long_description=open("README.md").read(),
     license="MIT",
