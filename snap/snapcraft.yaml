@@ -1,5 +1,5 @@
 name: wisdom # check to see if it's available
-version: '1.3+git' # this is freakin' awesome
+version: '1.4+git' # this is freakin' awesome
 summary: Wisdom from the terminal # 79 char long summary
 description: |
   Wisdom from wise people, straight from the terminal.
