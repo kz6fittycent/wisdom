@@ -9,6 +9,8 @@ confinement: strict # use 'strict' once you have the right plugs
 apps:
   wisdom:
     command: wisdom
+    environment:
+      LC_ALL: C.UTF-8
     plugs:
       - home
      
