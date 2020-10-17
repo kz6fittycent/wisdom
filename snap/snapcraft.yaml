@@ -1,26 +1,32 @@
-name: wisdom # check to see if it's available
-version: '1.4+git' # this is freakin' awesome
-summary: Wisdom from the terminal # 79 char long summary
+name: wisdom
+adopt-info: wisdom
+summary: Wisdom from the terminal
 description: |
   Wisdom from wise people, straight from the terminal.
-grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: strict # use 'strict' once you have the right plugs
+
+base: core18
+grade: stable 
+confinement: strict
+
+license: MIT
 
 apps:
   wisdom:
     command: wisdom
     environment:
       LC_ALL: C.UTF-8
-    plugs:
-      - home
      
 parts: 
-  my-part:
+  wisdom:
     source: https://github.com/kz6fittycent/wisdom
     source-type: git
     plugin: python
     python-version: python3
     
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
+      
     build-packages:
       - python3
       
